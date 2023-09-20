@@ -49,7 +49,9 @@ export const exercices: Exercice[] = [
 
                 I [style=invis]
                 O [label="O"];
+                H [label="H"];
                 C [label="C"];
+                
                 I -- C -- H;
                 O -- C;
                 O -- C;
