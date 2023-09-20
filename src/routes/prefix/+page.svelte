@@ -14,7 +14,6 @@
 
 	function reset() {
 		if (pool.length == 0) pool = shuffleArray(new Array(6).fill(0).map((e, i) => i + 1));
-		console.log(pool);
 
 		challenge = pool.pop() || 1;
 		challengeArray = shuffleArray(prefixes);
@@ -30,11 +29,12 @@
 		const choice = prefixes.indexOf(prefix);
 
 		valid = prefixes[challenge - 1];
-		console.log(prefix, choice + 1, challenge);
+
+		failed = Math.max(0, failed * 0.9 - 0.05);
+		succeeded = Math.max(0, succeeded * 0.9 - 0.05);
 
 		if (choice + 1 != challenge) {
 			wrong = prefixes[choice];
-			console.log(wrong);
 			setTimeout(reset, 1000 * 2);
 			failed++;
 		} else {
@@ -42,6 +42,8 @@
 			setTimeout(reset, 1000);
 		}
 	}
+
+	$: console.log(succeeded, failed, succeeded / (failed + succeeded));
 </script>
 
 <div class="wrapper h-screen grid">
