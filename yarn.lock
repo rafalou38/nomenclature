@@ -257,6 +257,11 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
 
+"@rdkit/rdkit@^2023.3.3-1.0.0":
+  version "2023.3.3-1.0.0"
+  resolved "https://registry.yarnpkg.com/@rdkit/rdkit/-/rdkit-2023.3.3-1.0.0.tgz#54ff0a066855f192362b8532047c085e010345d3"
+  integrity sha512-qcVImPp/qblybnHvQJy4DWU+Gkrgjx9ss8lUUTXKbrXIEyJm+M5BZYyJ2SWPkf1665f33PYO9m/Q+U7GvtNr5g==
+
 "@sveltejs/adapter-auto@^2.0.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@sveltejs/adapter-auto/-/adapter-auto-2.1.0.tgz#cb36fd7081e3c4b1c9a9192b1a23c8c82dce8a1b"
@@ -1195,6 +1200,11 @@ json-stable-stringify-without-jsonify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz#9db7b59496ad3f3cfef30a75142d2d930ad72651"
   integrity sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==
+
+kekule@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/kekule/-/kekule-1.0.0.tgz#2010560fc25e30a64999f922e9ea538e336f6720"
+  integrity sha512-Xm7dbyKPu1+JYOJHlVcngqDIU+jzBaGCufKPeSy7gD7QLHXAYIRCt9rLCBo0aDoK2G9Pm8M0RO1axS//+X5FLw==
 
 kleur@^4.1.5:
   version "4.1.5"
