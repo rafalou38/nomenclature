@@ -35,6 +35,8 @@ export async function renderSMILE(smiles: string) {
 
     return mol?.get_svg_with_highlights(
         JSON.stringify({
+            // addAtomIndices: true
+            explicitMethyl: true,
             // molDrawOptions: {
             //     circleAtoms: true
             // }

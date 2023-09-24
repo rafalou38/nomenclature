@@ -4,48 +4,31 @@ export type Molecule = {
     groups: string[]
 }
 export type MoleculeRef = [string[], string[], string, number]
-
+// Term:     https://www.lelivrescolaire.fr/page/18368819
+// Permiere: https://www.lelivrescolaire.fr/page/6693210
 export const molecules: MoleculeRef[] = [
-    // [["Alcohols"],                                ["Methanol", "Methyl alcohol", "Wood alcohol"],                                         "CO", 1],
-    // [["Alcohols"],                                ["Ethanol", "Ethyl alcohol", "Drinking alcohol"],                                      "CCO", 1],
-    // [["Alcohols"],                                ["Propanol", "Propan-1-ol", "1-propanol", "Propanol"],                                "CCCO", 1],
-    // [["Alcohols"],                                ["Butanol", "Butan-1-ol", "1-butanol", "Butanol"],                                    "CCCO", 1],
-    // [["Alcohols"],                                ["Pentanol", "Pentan-1-ol", "1-pentanol", "Pentanol"],                                "CCCO", 1],
-    // [["Alcohols"],                                ["Hexanol", "Hexan-1-ol", "1-hexanol", "Hexanol"],                                    "CCCO", 1],
-    // [["Alcohols"],                                ["2-Propanol", "Isopropanol", "Rubbing alcohol", "Propan-2-ol"],                    "CC(C)O", 1],
-    // [["Alcohols"],                                ["2-Butanol", "sec-Butyl alcohol", "Butan-2-ol"],                                  "CCC(C)O", 1],
-    // [["Alcohols"],                                ["2-Pentanol", "sec-Pentyl alcohol", "Pentan-2-ol"],                              "CCCC(C)O", 1],
-    // [["Alcohols"],                                ["2-Hexanol", "sec-Hexyl alcohol", "Hexan-2-ol"],                                "CCCCC(C)O", 1],
-    // [["Alcohols", "Alkenes"],                     ["2-Buten-1-ol", "Vinyl carbinol", "Buten-2-ol"],                                     "C=CO", 2],
-    // // [["Alcohols", "Aldehydes"],                   ["Hydroxyacetaldehyde", "Glycolaldehyde"],                                         "CC(=O)O", 3],
-    // [["Alcohols", "Ketones"],                     ["Butan-2-one", "1-Hydroxy-2-butanone", "Acetonyl alcohol"],                      "CC(=O)CO", 2],
-    // [["Alcohols", "Esters"],                      ["Methyl 2-hydroxypropanoate", "Methyl lactate"],                             "CC(C(=O)OC)O", 3],
-    // [["Alcohols", "Amines"],                      ["Aminoethanol", "2-Aminoethanol"],                                                 "CC(N)O", 2],
-    // // [["Alcohols", "Amides"],                      ["2-Hydroxyacetamide", "Glycolamide"],                                            "CC(=O)NO", 3],
-    // // [["Alcohols", "Haloalkanes"],                 ["3-Chloro-1-propanol", "3-Chloropropan-1-ol", "Propan-1-ol"],                     "CC(l)CO", 3],
-    // // [["Alcohols", "Alkenes", "Carboxylic Acids"], ["3-Hydroxybut-2-enoic acid", "Hydroxyacrylic acid", "But-2-enoic acid"],     "CC(=C)C(=O)O", 4],
-    // [["Alcohols", "Alkenes", "Amines"],           ["2-Amino-2-methyl-1-propanol", "tert-Leucinol", "Propan-2-ol"],                "CC(C)(N)CO", 2],
-    // #######################
-    // [["Aldehydes"], ["Methanal", "Methan-1-al", "1-methanal"], "C=O", 1],
-    // [["Aldehydes"], ["Ethanal", "Ethan-1-al", "1-ethanal"], "CC=O", 1],
-    // [["Aldehydes"], ["Propanal", "Propan-1-al", "1-propanal"], "CCC=O", 1],
-    // [["Aldehydes"], ["Butanal", "Butan-1-al", "1-butanal"], "CCCC=O", 1],
-    // [["Aldehydes"], ["Pentanal", "Pentan-1-al", "1-pentanal"], "CCCCC=O", 1],
-    // [["Aldehydes"], ["Hexanal", "Hexan-1-al", "1-hexanal"], "CCCCCC=O", 1],
-    // [["Aldehydes"], ["Propanedial", "Propane-1,2-dial", "1,2-propanedial"], "CC(=O)C=O", 1],
-    // [["Aldehydes"], ["Propanedial", "Propane-1,3-dial", "1,3-propanedial"], "CC(=O)C=O", 1],
-    // [["Aldehydes"], ["Butanedial", "Butane-1,2-dial", "1,2-butanedial"], "CCC(=O)C=O", 1],
-    // [["Aldehydes"], ["Butanedial", "Butane-1,3-dial", "1,3-butanedial"], "CCC(=O)C=O", 1],
-    // [["Aldehydes"], ["2-Methylpentanal", "2-Methylpentan-1-al", "1-2-methylpentanal"], "CCC(C)CC=O", 2],
-    // [["Aldehydes"], ["3-Methylpentanal", "3-Methylpentan-1-al", "1-3-methylpentanal"], "CCC(C)CC=O", 2],
-    // [["Aldehydes"], ["2,3-Dimethylbutanal", "2,3-Dimethylbutan-1-al", "1-2,3-dimethylbutanal"], "CC(C)C(C)C=O", 2],
-    // [["Aldehydes"], ["2,2-Dimethylbutanal", "2,2-Dimethylbutan-1-al", "1-2,2-dimethylbutanal"], "CC(C)CC=O", 2],
-    [["Aldehydes", "Alkenes"], ["2-Propenal", "Prop-2-en-1-al", "1-prop-2-enal"], "CC=CC=O", 3],
-    [["Aldehydes", "Alkanes"], ["2-Methylbutanal", "2-Methylbutan-1-al", "1-2-methylbutanal"], "CCC(C)C=O", 2],
-    [["Aldehydes", "Ketones"], ["3-Hydroxy-2-butanone", "Butan-3-ol-2-one", "3-hydroxy-2-butanone"], "CCC(C=O)C=O", 3],
-    [["Aldehydes", "Carboxylic Acids"], ["3-Hydroxypropanoic acid", "Propan-3-ol-1-oic acid", "3-hydroxypropanoic acid"], "CC(C=O)C(=O)O", 3],
-    [["Aldehydes", "Esters"], ["Methyl 3-formylpropanoate", "Methyl propan-3-ol-1-oate", "methyl 3-formylpropanoate"], "CC(C=O)C(=O)OC", 4],
-    [["Aldehydes", "Amines"], ["3-Aminopropanal", "Propan-3-amine-1-al", "3-aminopropanal"], "CC(C=O)N", 3],
-    [["Aldehydes", "Amides"], ["3-Formamidopropane", "Propan-3-amide-1-al", "3-formamidopropane"], "CC(C=O)C(=O)N", 4],
+    [["Alcane"], ["Méthane"], "C", 1],
+    [["Alcane"], ["Ethane"],  "CC", 1],
+    [["Alcane"], ["Propane"], "CCC", 1],
+    [["Alcane"], ["Butane"],  "CCCC", 1],
+    [["Alcane"], ["Pentane"], "CCCCC", 1],
+    [["Alcane"], ["Hexane"],  "CCCCCC", 1],
+    [["Alcane"], ["2-méthylbutane"], "CCC(C)C", 1],
+    [["Alcane"], ["3-propylhexane"], "CCC(CCC)CCC", 1],
+    [["Alcane"], ["2,2-diméthylbutane"], "CC(C)(C)CC", 1],
+    [["Alcane"], ["2,5-diméthylhexane"], "CC(C)CCC(C)C", 1],
+    [["Alcane"], ["3-éthyl-2-méthylpropane", "2-méthyl-3-éthylpropane"], "CC(C)C(CC)CC", 1],
+
+    [["Alcool"], ["Méthanol", "1-méthanol", "méthane-1-ol"], "CO", 1],
+    [["Alcool"], ["Propanol", "1-propanol", "propane-1-ol"], "CCCO", 1],
+    [["Alcool"], ["2-propanol", "propane-2-ol"], "CC(O)C", 1],
+    [["Alcool"], ["Ethanediol", "Ethane-1,2-diol",], "OCCO", 1],
+    [["Alcool"], ["Ethanediol", "Ethane-1,2-diol",], "C(O)C(O)CO", 1],
+    [["Alcool"], ["Propane-1,2,3-triol"], "C(O)C(O)CO", 1],
+    [["Alcool","Alcane"], ["2-Méthylpropan-2-ol"], "CC(C)(C)O", 1],
+    [["Alcool", "Amine"], ["2-Aminoéthanol"], "NCCO", 1],
+
+
+    // [["Alcool"], ["1-ol-Ethanol"],  "OCCO", 1],
 
 ]

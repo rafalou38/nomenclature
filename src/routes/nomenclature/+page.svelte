@@ -17,8 +17,7 @@
 	let state: 'failed' | 'guessing' | 'succeeded' = 'guessing';
 
 	async function next() {
-		if (queue.length == 0)
-			queue = shuffleArray(structuredClone(molecules)).filter((m) => m[3]);
+		if (queue.length == 0) queue = shuffleArray(structuredClone(molecules)).filter((m) => m[3]);
 		const ref = queue.pop()!;
 
 		current = {
@@ -62,7 +61,14 @@
 </script>
 
 <div class="flex flex-col h-screen">
-	<button on:click={next}>Skip</button>
+	<div class="flex">
+		<button class="grow" on:click={next}>Skip</button>
+		<button class="grow"
+			on:click={() => {
+				state = 'succeeded';
+			}}>Show</button
+		>
+	</div>
 	<div class="mol-container mx-auto grow h-full flex flex-col items-center justify-center">
 		<!-- {#if current} -->
 		<span class="answer" class:shown={state != 'guessing'}>{current?.name[0]}</span>
