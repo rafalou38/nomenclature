@@ -4,7 +4,7 @@
 	import postcss from 'postcss';
 	import { onMount } from 'svelte';
 	import { shuffleArray } from '../lib/utils';
-	import { molecules, type Molecule } from '$lib/molecules';
+	import { molecules, type Molecule, type MoleculeRef } from '$lib/molecules';
 
 	let RDKit: RDKitModule;
 	let svg = '';
@@ -12,27 +12,19 @@
 
 	let current: Molecule | null = null;
 
-	let queue = shuffleArray(structuredClone(molecules));
+	let queue: MoleculeRef[] = [];
 
 	let state: 'failed' | 'guessing' | 'succeeded' = 'guessing';
 
 	async function next() {
-		if (queue.length == 0) queue = shuffleArray(structuredClone(molecules));
+		if (queue.length == 0)
+			queue = shuffleArray(structuredClone(molecules)).filter((m) => m[3]);
 		const ref = queue.pop()!;
-		const smilesRequest = await fetch(
-			`/chem-file/${ref[0][0].toLowerCase()}/${ref[1].toLowerCase()}.smi`
-		);
-		const smiles = await smilesRequest.text();
-
-		const htmlRequest = await fetch(
-			`/chem-file/${ref[0][0].toLowerCase()}/${ref[1].toLowerCase()}_fr.html`
-		);
-		const html = await htmlRequest.text();
 
 		current = {
 			groups: ref[0],
-			name: smiles.split(/\s+/)[1],
-			smiles: smiles.split(/\s+/)[0]
+			name: ref[1].map((n) => n.toLowerCase()),
+			smiles: ref[2]
 		};
 
 		svg = await renderSMILE(current.smiles);
@@ -44,8 +36,7 @@
 
 		if (!current) return;
 		if (state == 'guessing') {
-			console.log(input.toLowerCase() == current.name.toLowerCase());
-			if (input.toLowerCase() == current.name.toLowerCase()) {
+			if (current.name.includes(input.toLowerCase())) {
 				state = 'succeeded';
 			} else {
 				state = 'failed';
@@ -57,7 +48,7 @@
 			setTimeout(() => {
 				EInput?.focus();
 			}, 100);
-		}, 3000);
+		}, 5000);
 	}
 
 	onMount(async () => {
@@ -71,9 +62,10 @@
 </script>
 
 <div class="flex flex-col h-screen">
+	<button on:click={next}>Skip</button>
 	<div class="mol-container mx-auto grow h-full flex flex-col items-center justify-center">
 		<!-- {#if current} -->
-		<span class="answer" class:shown={state != 'guessing'}>{current?.name}</span>
+		<span class="answer" class:shown={state != 'guessing'}>{current?.name[0]}</span>
 		<!-- {/if} -->
 
 		{#if svg}
