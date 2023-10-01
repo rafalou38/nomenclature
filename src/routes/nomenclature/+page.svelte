@@ -3,8 +3,8 @@
 	import type { RDKitModule } from '@rdkit/rdkit';
 	import postcss from 'postcss';
 	import { onMount } from 'svelte';
-	import { shuffleArray } from '../lib/utils';
 	import { molecules, type Molecule, type MoleculeRef } from '$lib/molecules';
+	import { shuffleArray } from '$lib/utils';
 
 	let RDKit: RDKitModule;
 	let svg = '';
