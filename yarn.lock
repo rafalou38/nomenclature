@@ -669,6 +669,10 @@ cssesc@^3.0.0:
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
   integrity sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
 
+"dat.gui@github:dataarts/dat.gui":
+  version "0.7.9"
+  resolved "https://codeload.github.com/dataarts/dat.gui/tar.gz/19c4725d03456ce5049e7131907fc0470326d5ae"
+
 debug@^4.1.1, debug@^4.3.1, debug@^4.3.2, debug@^4.3.4:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"
@@ -1201,11 +1205,6 @@ json-stable-stringify-without-jsonify@^1.0.1:
   resolved "https://registry.yarnpkg.com/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz#9db7b59496ad3f3cfef30a75142d2d930ad72651"
   integrity sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==
 
-kekule@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/kekule/-/kekule-1.0.0.tgz#2010560fc25e30a64999f922e9ea538e336f6720"
-  integrity sha512-Xm7dbyKPu1+JYOJHlVcngqDIU+jzBaGCufKPeSy7gD7QLHXAYIRCt9rLCBo0aDoK2G9Pm8M0RO1axS//+X5FLw==
-
 kleur@^4.1.5:
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.1.5.tgz#95106101795f7050c6c650f350c683febddb1780"
@@ -1721,6 +1720,13 @@ source-map-js@^1.0.1, source-map-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
+
+speck-renderer@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/speck-renderer/-/speck-renderer-0.0.8.tgz#c6890834600864df9a90b62ead593e43b40620a0"
+  integrity sha512-0w8pir6+CuZuAU/16Lmg85bMnTsOQHDmof8+P3d3uhW5EdbU5hjtOrk53L6yWrd+JhFmTh2Rta173+YFNo+WBQ==
+  dependencies:
+    dat.gui "github:dataarts/dat.gui"
 
 streamsearch@^1.1.0:
   version "1.1.0"

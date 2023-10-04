@@ -1,13 +1,17 @@
 <script lang="ts">
-	import { GetRDKit, renderSMILE } from '$lib/RDKit';
-	import type { RDKitModule } from '@rdkit/rdkit';
-	import postcss from 'postcss';
 	import { onMount } from 'svelte';
-	import { molecules, type Molecule, type MoleculeRef } from '$lib/molecules';
+
 	import { shuffleArray } from '$lib/utils';
 
-	let RDKit: RDKitModule;
-	let svg = '';
+	import LewisPreview from './LewisPreview.svelte';
+	import Preview3D from "./Preview3D.svelte";
+
+	import type { Molecule, MoleculeRef } from '$lib/molecules';
+	import { molecules as mUnTyped } from '$lib/data/molecules.json';
+
+
+	const molecules = mUnTyped as MoleculeRef[];
+
 	let input = '';
 
 	let current: Molecule | null = null;
@@ -25,8 +29,6 @@
 			name: ref[1].map((n) => n.toLowerCase()),
 			smiles: ref[2]
 		};
-
-		svg = await renderSMILE(current.smiles);
 	}
 
 	function submit() {
@@ -63,7 +65,8 @@
 <div class="flex flex-col h-screen">
 	<div class="flex">
 		<button class="grow" on:click={next}>Skip</button>
-		<button class="grow"
+		<button
+			class="grow"
 			on:click={() => {
 				state = 'succeeded';
 			}}>Show</button
@@ -73,9 +76,9 @@
 		<!-- {#if current} -->
 		<span class="answer" class:shown={state != 'guessing'}>{current?.name[0]}</span>
 		<!-- {/if} -->
-
-		{#if svg}
-			{@html svg}
+		{#if current}
+			<!-- <LewisPreview molecule={current} /> -->
+			<Preview3D molecule={current} />
 		{/if}
 	</div>
 
