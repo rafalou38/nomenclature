@@ -42,6 +42,7 @@ export class ThreeMolRenderer {
         // this.scene.add(mesh);
 
         this.renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvas });
+        this.renderer.setPixelRatio( window.devicePixelRatio );
         this.renderer.setClearColor(0xffffff, 1);
 
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
@@ -91,7 +92,7 @@ export class ThreeMolRenderer {
     addAom(atom: Atom3D) {
         this.atoms.push(atom);
 
-        const geometry = new THREE.SphereGeometry(atom.element.radius / 7, 32, 16);
+        const geometry = new THREE.SphereGeometry(atom.element.radius / 7, 64, 64);
         const [r, g, b] = atom.element.color;
         const material = new THREE.MeshPhongMaterial({
             color: new THREE.Color(r, g, b),     // Set the base color
@@ -118,7 +119,7 @@ export class ThreeMolRenderer {
         ), 0.5);
         const curve = new THREE.CatmullRomCurve3([posOrigin, posTarget]);
 
-        const geometry = new THREE.TubeGeometry(curve, 20, atomOrigin.element.radius / 30);
+        const geometry = new THREE.TubeGeometry(curve, 20, atomOrigin.element.radius / 30, 32);
         const [r, g, b] = atomOrigin.element.color;
         const material = new THREE.MeshPhongMaterial({
             color: new THREE.Color(r, g, b),     // Set the base color
