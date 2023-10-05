@@ -1,4 +1,7 @@
 {
+	"//":[
+		[["Acide carboxylique"], ["Acide 2-hydroxypropan-1,2,3-tricarboxylique", "Acide citrique"], "C(C(O)(C(=O)O)CC(=O)O)C(=O)O", 4]
+	],
 	"molecules": [
 		[["Alcane"], ["Méthane"], "C", 1],
 		[["Alcane"], ["Ethane"], "CC", 1],
@@ -18,10 +21,11 @@
 		[["Alcool"], ["Ethanediol", "Ethane-1,2-diol"], "OCCO", 1],
 		[["Alcool"], ["Propane-1,2,3-triol"], "C(O)C(O)CO", 1],
 		[["Alcool", "Alcane"], ["2-Méthylpropan-2-ol"], "CC(C)(C)O", 1],
-		[["Alcool", "Amine"], ["2-Aminoéthanol"], "NCCO", 1]
-	],
-	"//": [
-		[["Alcool"], ["1-ol-Ethanol"], "OCCO", 1],
-		[["Alcool"], ["Ethanediol", "Ethane-1,2-diol"], "C(O)C(O)CO", 1]
+		[["Alcool", "Amine"], ["2-Aminoéthanol"], "NCCO", 1],
+		
+		[["Acide carboxylique"], ["Acide propanoïque"], "CCC(=O)O", 1],
+		[["Acide carboxylique"], ["Acide butanoïque"], "CCCC(=O)O", 1],
+		[["Acide carboxylique"], ["Acide méthanoïque", "Acide formique"], "C(=O)O", 1],
+		[["Acide carboxylique", "Amine"], ["Acide 4-aminobutanoïque"], "C(C(=O)O)CCN", 2]
 	]
 }

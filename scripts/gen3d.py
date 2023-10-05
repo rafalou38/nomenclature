@@ -6,7 +6,10 @@ import os
 import json
 
 
-os.makedirs("./static/3d-files/")
+try:
+    os.makedirs("./static/3d-files/")
+except:
+    pass
 print("Generating 3D files...")
 
 with open("./src/lib/data/molecules.json", "r") as f:

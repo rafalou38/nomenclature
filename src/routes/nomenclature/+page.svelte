@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import { shuffleArray } from '$lib/utils';
+	import { shuffleArray, simplify } from '$lib/utils';
 
 	import LewisPreview from './LewisPreview.svelte';
-	import Preview3D from "./Preview3D.svelte";
+	import Preview3D from './Preview3D.svelte';
 
 	import type { Molecule, MoleculeRef } from '$lib/molecules';
 	import { molecules as mUnTyped } from '$lib/data/molecules.json';
-
 
 	const molecules = mUnTyped as MoleculeRef[];
 
@@ -22,7 +21,11 @@
 
 	async function next() {
 		if (queue.length == 0) queue = shuffleArray(structuredClone(molecules)).filter((m) => m[3]);
+		console.log(queue);
+
 		const ref = queue.pop()!;
+
+		console.log(ref[1][0], simplify(ref[1][0]));
 
 		current = {
 			groups: ref[0],
@@ -32,12 +35,9 @@
 	}
 
 	function submit() {
-		debugger;
-		input = '';
-
 		if (!current) return;
 		if (state == 'guessing') {
-			if (current.name.includes(input.toLowerCase())) {
+			if (current.name.map(simplify).includes(simplify(input))) {
 				state = 'succeeded';
 			} else {
 				state = 'failed';
@@ -45,6 +45,8 @@
 		}
 
 		setTimeout(() => {
+			if (state == 'succeeded') next();
+				input = '';
 			state = 'guessing';
 			setTimeout(() => {
 				EInput?.focus();
@@ -63,7 +65,7 @@
 </script>
 
 <div class="flex flex-col h-screen">
-	<div class="flex">
+	<div class="flex cheats">
 		<button class="grow" on:click={next}>Skip</button>
 		<button
 			class="grow"
@@ -152,6 +154,9 @@
 		&:hover {
 			filter: brightness(0.95);
 		}
+	}
+	.cheats button{
+		@apply p-1 rounded-none text-sm m-1
 	}
 
 	@keyframes shake {
