@@ -37,13 +37,14 @@
 		});
 
 		speck.loadStructure(data);
-        speck.renderer.needReset = false;
+        //speck.renderer.needReset = false;
 		speck.renderer.renderer.setResolution(2048, 256);
 		speck.renderer.view.atomScale = 0.3;
 		speck.renderer.view.relativeAtomScale = 0.6;
 		speck.renderer.view.spf = 32;
 
         // debugger;
+		return
         speck.renderer.renderer.reset();
 		for (let i = 0; i < 1024/32; i++) {
 			speck.renderer.renderer.render(speck.renderer.view);
