@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { randRange, shuffleArray } from '../lib/utils';
+	import { randRange, shuffleArray } from '$lib/utils';
 	import { instance } from '@viz-js/viz';
 
 	import { exercices, type Exercice } from './lewis';

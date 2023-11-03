@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { randRange, shuffleArray } from '../lib/utils';
+	import { randRange, shuffleArray } from '$lib/utils';
 
 	const prefixes = ['Méth-', 'Éth-', 'Prop-', 'But-', 'Pent-', 'Hex-'];
 	let pool: number[] = [];

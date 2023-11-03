@@ -1,7 +1,7 @@
 <div class="h-screen grid grid-rows-3 lg:grid-rows-none lg:grid-cols-3 gap-2 p-2">
 	<a href="/prefix" class="link"><span class="font-black text-4xl">1</span> Préfixes</a>
 	<a href="/familles" class="link"><span class="font-black text-4xl">2</span> Familles</a>
-	<a href="#" aria-disabled class="link"><span class="font-black text-4xl">3</span> Nomenclature</a>
+	<a href="/nomenclature" class="link"><span class="font-black text-4xl">3</span> Nomenclature</a>
 </div>
 
 <style lang="postcss">
