@@ -25,6 +25,7 @@
 		speck = new Speck({
 			canvasContainerID: 'speck-root',
 			canvasID: 'speck-canvas',
+			
 			options: {
 				zoomRatio: 0.8,
 				atoms: {
@@ -42,14 +43,6 @@
 		speck.renderer.view.atomScale = 0.3;
 		speck.renderer.view.relativeAtomScale = 0.6;
 		speck.renderer.view.spf = 32;
-
-        // debugger;
-		return
-        speck.renderer.renderer.reset();
-		for (let i = 0; i < 1024/32; i++) {
-			speck.renderer.renderer.render(speck.renderer.view);
-		}
-        // console.log("done")
 	}
 
 	let EContainer: HTMLDivElement;

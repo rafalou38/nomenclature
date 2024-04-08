@@ -80,7 +80,7 @@
 <HomeButton />
 
 <svg class="loaded" style="display: none;"></svg>
-<div class="wrapper h-screen grid">
+<div class="wrapper h-dvh grid">
 	<div class="h-2 overflow-hidden bg-slate-200 flex items-stretch">
 		<div
 			class="bg-green-600 grow-0 shrink-0 transition-all"

@@ -15,7 +15,7 @@ export const assert = <T>(value: T, message?: string): NonNullable<T> => {
     return value;
 }
 
-const simplifications = new Map([["é", "e"], ["è", "e"], ["ï", "i"], ["-", ""], ["e", ""], [" ", ""]]);
+const simplifications = new Map([["é", "e"], ["è", "e"], ["ï", "i"], ["-", ""], [" ", ""], ["ne", "n"]]);
 console.log(simplifications);
 
 export const simplify = (str: string) => str.toLowerCase().split("").map(c => simplifications.has(c) ? simplifications.get(c) : c).join("");

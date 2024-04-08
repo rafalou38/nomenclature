@@ -1,9 +1,10 @@
 export type Molecule = {
     name: string[],
     smiles: string,
-    groups: string[]
+    groups: string[],
+    external: boolean
 }
-export type MoleculeRef = [string[], string[], string, number]
+export type MoleculeRef = [string[], string[], string, number, boolean]
 // Term:     https://www.lelivrescolaire.fr/page/18368819
 // Permiere: https://www.lelivrescolaire.fr/page/6693210
 // export const molecules: MoleculeRef[] = [
@@ -31,4 +32,4 @@ export type MoleculeRef = [string[], string[], string, number]
 
 //     // [["Alcool"], ["1-ol-Ethanol"],  "OCCO", 1],
 
-// ]
+//

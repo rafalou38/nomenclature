@@ -13,7 +13,6 @@ export interface Atom3D {
 
 
 export class ThreeMolRenderer {
-
     private renderer: THREE.WebGLRenderer;
     private scene: THREE.Scene;
     private camera: THREE.PerspectiveCamera;
@@ -47,7 +46,7 @@ export class ThreeMolRenderer {
 
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
         this.controls.autoRotate = true;
-        this.controls.autoRotateSpeed = 4;
+        this.controls.autoRotateSpeed = 2;
 
         this.renderer.setAnimationLoop(animation);
 
@@ -87,6 +86,9 @@ export class ThreeMolRenderer {
 
     resize(width: number, height: number) {
         this.renderer.setSize(width, height);
+        this.camera.updateProjectionMatrix()
+
+        
     }
 
     addAom(atom: Atom3D) {

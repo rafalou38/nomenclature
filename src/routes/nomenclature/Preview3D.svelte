@@ -25,6 +25,10 @@
         let rect = EContainer?.getBoundingClientRect();
         if (rect) {
             renderer.resize(rect.width, rect.height);
+            console.log("Resized", rect.width, rect.height);
+
+            // renderer = new ThreeMolRenderer(ECanvas);
+            // if(molecule) render(molecule);
         }
     }
 
