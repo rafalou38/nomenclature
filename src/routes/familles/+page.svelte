@@ -56,16 +56,14 @@
 	});
 
 	function submit(response: Exercice) {
-		if (valid) return; // Challenge has not ben reset
-
-		// const choice = exercices.(response);
+		if (valid) return;
 
 		valid = challenge;
 
 		failed = Math.max(0, failed * 0.9 - 0.05);
 		succeeded = Math.max(0, succeeded * 0.9 - 0.05);
 
-		if (challenge != response) {
+		if (challenge?.family != response.family) {
 			wrong = response;
 			setTimeout(reset, 1000 * 2);
 			failed++;
@@ -76,19 +74,17 @@
 			setTimeout(reset, 1000);
 		}
 	}
-
-	// $: console.log(succeeded, failed, succeeded / (failed + succeeded));
 </script>
 
 <svg class="loaded" style="display: none;"></svg>
 <div class="wrapper h-screen grid">
 	<div class="h-2 overflow-hidden bg-slate-200 flex items-stretch">
 		<div
-			class="bg-green-600 grow-0 shrink-0"
+			class="bg-green-600 grow-0 shrink-0 transition-all"
 			style="width: {(succeeded / (failed + succeeded)) * 100}%"
 		/>
 		<div
-			class="bg-red-600 grow-0 shrink-0"
+			class="bg-red-600 grow-0 shrink-0 transition-all"
 			style="width: {(failed / (failed + succeeded)) * 100}%"
 		/>
 	</div>
@@ -101,14 +97,19 @@
 		{#each responsesPossible as exercice, i}
 			<button
 				class="grid place-items-center bg-slate-200 hover:bg-slate-300 cursor-pointer sm:text-3xl text-xl rounded-md font-bold"
-				class:valid={valid == exercice}
-				class:wrong={wrong == exercice}
+				class:valid={valid?.family == exercice.family}
+				class:wrong={wrong?.family == exercice.family}
 				on:click={() => submit(exercice)}
 				on:touchend={() => submit(exercice)}
 			>
 				{exercice.family}
 			</button>
 		{/each}
+			<button
+				class="grid place-items-center bg-slate-200 sm:text-3xl text-xl rounded-md font-bold"
+				disabled
+			>
+			</button>
 	</div>
 </div>
 
