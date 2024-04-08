@@ -1,4 +1,5 @@
 <script lang="ts">
+	import HomeButton from '$lib/components/HomeButton.svelte';
 	import { randRange, shuffleArray } from '$lib/utils';
 
 	const prefixes = ['Méth-', 'Éth-', 'Prop-', 'But-', 'Pent-', 'Hex-'];
@@ -45,15 +46,15 @@
 
 	$: console.log(succeeded, failed, succeeded / (failed + succeeded));
 </script>
-
+<HomeButton />
 <div class="wrapper h-screen grid">
 	<div class="h-2 overflow-hidden bg-slate-200 flex items-stretch">
 		<div
-			class="bg-green-600 grow-0 shrink-0"
+			class="bg-green-600 grow-0 shrink-0 transition-all"
 			style="width: {(succeeded / (failed + succeeded)) * 100}%"
 		/>
 		<div
-			class="bg-red-600 grow-0 shrink-0"
+			class="bg-red-600 grow-0 shrink-0 transition-all"
 			style="width: {(failed / (failed + succeeded)) * 100}%"
 		/>
 	</div>

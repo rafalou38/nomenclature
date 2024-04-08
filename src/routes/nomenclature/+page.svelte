@@ -8,6 +8,7 @@
 
 	import type { Molecule, MoleculeRef } from '$lib/molecules';
 	import { molecules as mUnTyped } from '$lib/data/molecules.json';
+	import HomeButton from '$lib/components/HomeButton.svelte';
 
 	const molecules = mUnTyped as MoleculeRef[];
 
@@ -63,7 +64,7 @@
 		console.log('focus', EInput);
 	}
 </script>
-
+<HomeButton />
 <div class="flex flex-col h-screen">
 	<div class="flex cheats">
 		<button class="grow" on:click={next}>Skip</button>

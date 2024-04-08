@@ -4,6 +4,7 @@
 	import { instance } from '@viz-js/viz';
 
 	import { exercices, type Exercice } from './lewis';
+	import HomeButton from '$lib/components/HomeButton.svelte';
 
 	let responsesPossible = shuffleArray(exercices);
 	let challengeArray = shuffleArray(exercices);
@@ -75,6 +76,8 @@
 		}
 	}
 </script>
+
+<HomeButton />
 
 <svg class="loaded" style="display: none;"></svg>
 <div class="wrapper h-screen grid">
